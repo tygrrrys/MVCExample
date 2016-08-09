@@ -3,12 +3,13 @@ package com.epam.bench.util;
 import com.epam.bench.model.FileBucket;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 /**
  * Created by root on 08.08.16.
  */
 @Component
-public class FileValidator {
+public class FileValidator implements Validator{
 
     public boolean supports(Class<?> clazz) {
         return FileBucket.class.isAssignableFrom(clazz);
